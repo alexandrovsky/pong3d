@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+      <title>pong</title>
+
+      <style>
+        body {
+          background-color: black;
+        }
+        #gameCanvas {
+  				background-color: black;
+  				margin: auto;
+          /*width: 640px;
+				  height: 360px;*/
+				  margin: auto;
+				  align: center;
+			  }
+
+
+        #scoreboard {
+          text-align: center;
+          font-family: Segoe UI, Helvetica, Ubuntu, sans-serif;
+          /*color: white;*/
+        }
+        #scores {
+          font-size:600%;
+          padding:0;
+          margin:0;
+          color: white;
+        }
+        #title {          
+          color: white;
+        }
+    </style>
+
+
+
+        <meta charset="UTF-8">
+<!--        <meta name="viewport" content="width=device-width">-->
+
+
+    </head>
+    <body>
+      <div id='scoreboard'>
+        <h1 id='title'>3D PONG</h1>
+  			<h1 id='scores'>0-0</h1>
+  			<h2 id='winnerBoard'>First to 7 wins!</h2>
+      <div id='gameCanvas'></div>
+
+		</div>
+
+
+      <script type="text/javascript" src="js/lib/three.js"></script>
+      <script type="text/javascript" src="js/lib/dat.gui.min.js"></script>
+      <script type="text/javascript" src="js/lib/headtrackr.js"></script>
+
+
+      <script type="text/javascript" src="js/app/app_helper.js"></script>
+      <script type="text/javascript" src="js/app/TrackballControls.js"></script>
+      <script type="text/javascript" src="js/app/app.js"></script>
+      <!--<script type="text/javascript" src="js/app/gui.js"></script> -->
+
+    </body>
+</html>
