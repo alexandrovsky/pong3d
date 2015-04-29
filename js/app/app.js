@@ -4,6 +4,32 @@ var App = {};
 
 
 //gui.add(params, 'interation')
+var box;
+var line;
+function initHeadTracker(){
+
+
+  var videoInput = document.getElementById('inputVideo');
+  var canvasInput = document.getElementById('videoInputCanvas');
+
+  videoInput.style.position = 'absolute';
+  videoInput.style.bottom = '10px';
+  videoInput.style.right = '10px';
+  videoInput.style.zIndex = '100001';
+  videoInput.style.display = 'block';
+
+
+
+  var htracker = new headtrackr.Tracker();
+  htracker.init(videoInput, canvasInput);
+  htracker.start();
+
+
+  cameraControls = headtrackr.controllers.three.realisticAbsoluteCameraControl(App.camera, 10, [0, 100, 50], new THREE.Vector3(0,0,0), {damping: 0.5});
+
+  return htracker;
+}
+
 
 App.init = function () {
     App.clock = createClock();
@@ -29,6 +55,8 @@ App.init = function () {
 
     document.addEventListener("keydown", App.onKeyDownEvent, false);
     document.addEventListener("keyup", App.onKeyUpEvent, false);
+
+    App.headtracker = initHeadTracker();
 };
 
 App.start = function() {

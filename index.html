@@ -14,11 +14,12 @@ and open the template in the editor.
         }
         #gameCanvas {
   				background-color: black;
-  				margin: auto;
-          /*width: 640px;
-				  height: 360px;*/
-				  margin: auto;
-				  align: center;
+  				/*margin: auto;*/
+          width: 640px;
+				  height: 360px;
+          position:absolute;
+				  /*margin: auto;
+				  align: center;*/
 			  }
 
 
@@ -33,7 +34,7 @@ and open the template in the editor.
           margin:0;
           color: white;
         }
-        #title {          
+        #title {
           color: white;
         }
     </style>
@@ -46,18 +47,24 @@ and open the template in the editor.
 
     </head>
     <body>
+      <div id='gameCanvas'></div>
       <div id='scoreboard'>
         <h1 id='title'>3D PONG</h1>
   			<h1 id='scores'>0-0</h1>
   			<h2 id='winnerBoard'>First to 7 wins!</h2>
-      <div id='gameCanvas'></div>
+		  </div>
+      <canvas id="videoInputCanvas" width="320" height="240" style="display:none"></canvas>
+      <!-- <canvas id="videoInputCanvas" width="320" height="240" style="position:absolute top:50px display:block"></canvas> -->
+      <video id="inputVideo" autoplay loop></video>
 
-		</div>
 
 
       <script type="text/javascript" src="js/lib/three.js"></script>
       <script type="text/javascript" src="js/lib/dat.gui.min.js"></script>
       <script type="text/javascript" src="js/lib/headtrackr.js"></script>
+
+
+
 
 
       <script type="text/javascript" src="js/app/app_helper.js"></script>
